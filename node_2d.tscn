@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://cr8pn2uxr2fpv"]
+
+[ext_resource type="Texture2D" uid="uid://v5j0whq745aw" path="res://Character_.png" id="1_cfb7b"]
+[ext_resource type="Texture2D" uid="uid://bfnuidqv2a4x1" path="res://Hat_.png" id="2_6s4x0"]
+[ext_resource type="Script" path="res://Hat.gd" id="3_65oth"]
+[ext_resource type="Texture2D" uid="uid://b0b6rc8v31tsg" path="res://Pant_.png" id="3_sj1qc"]
+[ext_resource type="Texture2D" uid="uid://dt2m2wq5j2qo4" path="res://Shoes_.png" id="4_qwl8x"]
+[ext_resource type="Texture2D" uid="uid://glp80ltetpx8" path="res://Shirt_.png" id="5_ayats"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kac3r"]
+size = Vector2(283, 31)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Character" type="Sprite2D" parent="."]
+texture = ExtResource("1_cfb7b")
+
+[node name="Area2D" type="Area2D" parent="Character"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D"]
+position = Vector2(-3, -416)
+shape = SubResource("RectangleShape2D_kac3r")
+
+[node name="Control" type="Control" parent="Character"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Character/Control"]
+layout_mode = 0
+offset_left = -747.0
+offset_top = 459.0
+offset_right = 791.0
+offset_bottom = 797.0
+
+[node name="Hat" type="TextureRect" parent="Character/Control/Panel"]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 52.0
+offset_right = 737.0
+offset_bottom = 277.0
+texture = ExtResource("2_6s4x0")
+script = ExtResource("3_65oth")
+
+[node name="Pant" type="TextureRect" parent="Character/Control/Panel"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 62.0
+offset_right = 339.0
+offset_bottom = 271.0
+texture = ExtResource("3_sj1qc")
+
+[node name="Shoes" type="TextureRect" parent="Character/Control/Panel"]
+layout_mode = 0
+offset_left = 1191.0
+offset_top = 139.0
+offset_right = 1492.0
+offset_bottom = 229.0
+texture = ExtResource("4_qwl8x")
+
+[node name="Shirt" type="TextureRect" parent="Character/Control/Panel"]
+layout_mode = 0
+offset_left = 756.0
+offset_top = 67.0
+offset_right = 1125.0
+offset_bottom = 278.0
+texture = ExtResource("5_ayats")
